@@ -1,0 +1,4 @@
+.container {}
+.leftside {float: left; width: 50%; text-align: center;}
+.rightside {float: left; width: 50%; text-align: center;}
+.footer {clear: both; text-align: center;}
