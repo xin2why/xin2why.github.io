@@ -1,4 +1,6 @@
+body {background-color: #b2e0e6;}
 .container {}
-.leftside {float: left; width: 50%; text-align: center;}
-.rightside {float: left; width: 50%; text-align: center;}
 .footer {clear: both; text-align: center;}
+.music {clear: both; text-align: center; width: 600px; margin: 20px auto;}
+.music iframe {float: left;}
+.music-comment {float: right;}
