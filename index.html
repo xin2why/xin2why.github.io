@@ -2,62 +2,46 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
 	<title>王洪云</title>
 	<link rel="stylesheet" href="index.css" />
 </head>
 <body>
-	<h1 style="text-align:center;">王洪云</h1>
-	<div class="container">
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=28068308&auto=0&height=66"></iframe>
-		<div class="music-comment">
-			<p>十年，从现在开始</p>
-		</div>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=247498&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=175981&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=406238&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=27566765&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=35470197&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=25788001&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=29436904&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=65060&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=29713754&auto=0&height=66"></iframe>
-		</div>
-		<div class="music">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-		src="http://music.163.com/outchain/player?type=2&id=110762&auto=0&height=66"></iframe>
-		</div>
+	<div class="container" id="musics">
 	</div>
 	<div class="footer">
 		Copyright © 2015 wanghongyun.cn. All Rights Reserved
 	</div>
 </body>
+<script>
+var musicIDs = new Array("28068308","247498",
+												"175981","406238","27566765",
+												"35470197","25788001","29436904",
+												"65060","29713754","110762");
+function createIframes(){
+		for (var i = 0; i < musicIDs.length; i++) {
+	    var iframe = document.createElement("iframe");
+			iframe.id = "iframe" + i;
+	    iframe.src = "";
+	    iframe.style.cssText = "frameborder:no;border:0;marginwidth:0;marginheight:0;width:330;height:86";
+			var d = document.createElement("div");
+			d.className = "music";
+			d.appendChild(iframe);
+	    document.getElementById("musics").appendChild(d);
+		}
+};
+createIframes();
+function setIframeSrc(){
+		for (var i = 0; i < musicIDs.length; i++) {
+    	var s = "http://music.163.com/outchain/player?type=2&id="+musicIDs[i]+"&auto=0&height=66";
+    	var iframe = document.getElementById("iframe"+i);
+    	if( -1 == navigator.userAgent.indexOf("MSIE")){
+        	iframe.src = s;
+    	}else {
+        	iframe.location = s;
+    	}
+		}
+}
+setTimeout(setIframeSrc,5);
+</script>
 </html>
