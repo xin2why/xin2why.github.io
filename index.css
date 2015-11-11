@@ -1,6 +1,6 @@
-body {background-color: #b2e0e6;}
-.container {}
+body {background-color: /*#b2e0e6;*/#fcc8d9;}
+.container {margin: 20px auto; width: 60%;}
 .footer {clear: both; text-align: center;}
-.music {clear: both; text-align: center; width: 600px; margin: 20px auto;}
+.music {clear: both;}
 .music iframe {float: left;}
 .music-comment {float: right;}

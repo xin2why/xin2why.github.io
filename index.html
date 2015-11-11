@@ -15,15 +15,15 @@
 </body>
 <script>
 var musicIDs = new Array("28068308","247498",
-												"175981","406238","27566765",
-												"35470197","25788001","29436904",
-												"65060","29713754","110762");
+						"175981","406238","27566765",
+						"35470197","25788001","29436904",
+						"65060","29713754","110762");
 function createIframes(){
 		for (var i = 0; i < musicIDs.length; i++) {
 	    var iframe = document.createElement("iframe");
 			iframe.id = "iframe" + i;
 	    iframe.src = "";
-	    iframe.style.cssText = "frameborder:no;border:0;marginwidth:0;marginheight:0;width:330;height:86";
+	    iframe.style.cssText = "frameborder:no;border:0;width:330;height:86;";
 			var d = document.createElement("div");
 			d.className = "music";
 			d.appendChild(iframe);
